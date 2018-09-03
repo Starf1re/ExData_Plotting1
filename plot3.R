@@ -10,6 +10,8 @@ dateTime <- paste(as.Date(power$Date), power$Time)
 power$Datetime <- as.POSIXct(dateTime)
 
 
+png("plot3.png", height=480, width=480)
+
 plot(power$Sub_metering_1 ~ power$Datetime, type="l",
      xlab="", ylab="Energy sub metering")
 
@@ -22,7 +24,6 @@ legend("topright", col=c("black", "red", "blue"),
        lty=1, lwd=2 )
 
 
-dev.copy(png, file="plot3.png", height=480, width=480)
 
 
 dev.off()

@@ -9,6 +9,7 @@ power$Date <- as.Date(power$Date, format="%d/%m/%Y")
 dateTime <- paste(as.Date(power$Date), power$Time)
 power$Datetime <- as.POSIXct(dateTime)
 
+png("plot4.png", height=480, width=480)
 
 par(mfrow=c(2,2), mar=c(4,4,2,1), oma=c(0,1,2,0))
 
@@ -34,8 +35,6 @@ with(power, {
 })
 
 
-
-dev.copy(png, file="plot4.png", height=480, width=480)
 
 
 dev.off()
